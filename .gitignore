@@ -16,3 +16,9 @@ dist/
 # Sublime project files
 *.sublime-project
 *.sublime-workspace
+
+# Vim files
+.ropeproject
+/data
+tags
+

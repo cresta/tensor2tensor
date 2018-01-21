@@ -473,6 +473,7 @@ def _interactive_input_fn(hparams):
         x += [0] * (const_array_size - len(x))
         yield {
             "inputs": np.array(x).astype(np.int32),
+            "problem_choice": np.array(0).astype(np.int32)
         }
       elif input_type == "image":
         input_path = input_string
@@ -584,6 +585,7 @@ def _interactive_input_tensor_to_features_dict(feature_map, hparams):
     p_hparams = hparams.problems[problem_choice]
     return (tf.constant(p_hparams.input_space_id), tf.constant(
         p_hparams.target_space_id), x)
+
 
   input_space_id, target_space_id, x = cond_on_index(
       input_fn, feature_map["problem_choice"], len(hparams.problems) - 1)

@@ -42,6 +42,7 @@ from tensor2tensor.data_generators import translate_enmk
 from tensor2tensor.data_generators import translate_enzh
 from tensor2tensor.data_generators import wiki
 from tensor2tensor.data_generators import wsj_parsing
+from tensor2tensor.data_generators import text2fluff
 
 
 # Problem modules that require optional dependencies

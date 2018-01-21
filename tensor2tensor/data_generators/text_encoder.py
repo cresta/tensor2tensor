@@ -219,7 +219,7 @@ class TokenTextEncoder(TextEncoder):
                vocab_filename,
                reverse=False,
                vocab_list=None,
-               replace_oov=None,
+               replace_oov='<unk>',
                num_reserved_ids=NUM_RESERVED_TOKENS):
     """Initialize from a file or list, one token per line.
 

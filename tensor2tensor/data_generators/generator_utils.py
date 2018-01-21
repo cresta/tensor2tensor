@@ -156,6 +156,10 @@ def generate_files(generator, output_filenames, max_cases=None):
     counter += 1
     if max_cases and counter > max_cases:
       break
+
+    if not case.get('inputs') or not case.get('targets'):
+        continue
+
     sequence_example = to_example(case)
     writers[shard].write(sequence_example.SerializeToString())
     shard = (shard + 1) % num_shards

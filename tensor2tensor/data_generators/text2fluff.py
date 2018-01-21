@@ -23,8 +23,12 @@ class Text2fluff(problem.Text2TextProblem):
         return problem.SpaceID.EN_TOK
 
     @property
+    def source_vocab_size(self):
+        return 15487
+
+    @property
     def targeted_vocab_size(self):
-        return 2 ** 14
+        return 15487
 
     @property
     def target_space_id(self):
@@ -57,5 +61,5 @@ class Text2fluff(problem.Text2TextProblem):
 def text2fluff_hparams():
     # hparams = transformer.transformer_base_single_gpu()  # Or whatever you'd like to build off.
     hparams = transformer.transformer_base()
-    hparams.batch_size = 256
+    hparams.batch_size = 1024
     return hparams
